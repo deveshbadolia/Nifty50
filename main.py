@@ -23,7 +23,7 @@ with c2:
 with c3:
     days = st.slider("Number of Days for Performance", 1, 200, value=100)
 with c4:
-    top_n_stocks = st.number_input('Top Stocks', 0, 10, value=5)
+    top_n_stocks = st.number_input('Top Stocks', 0, 50, value=5)
 with c5:
     int_eq = st.number_input("Enter the initial equity", 1000000, 20000000)
 
