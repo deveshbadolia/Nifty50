@@ -176,3 +176,9 @@ data = {'Index': ['Sample strategy', 'Nifty', 'Benchmark strategy'],
 
 # Display DataFrame
 st.dataframe(data, hide_index=True)
+
+
+#Display Selected Stocks
+stock_list = [i.replace(".NS", "") for i in stock_list]
+stock_string = ', '.join(stock_list)
+st.write(f"Top Stock Selected: {stock_string}")
