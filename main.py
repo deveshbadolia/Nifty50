@@ -120,7 +120,7 @@ def sample_strategy():
     # Calculate Sharpe ratio
     sharpe_ratio = (statistics.mean(daily_returns) / daily_returns.std()) ** (1 / 252)
 
-    return portfolio_equity_curve, volatility, CAGR, sharpe_ratio
+    return portfolio_equity_curve, volatility, CAGR, sharpe_ratio,stock
 
 # Define Nifty strategy
 def nifty_equity():
@@ -154,7 +154,7 @@ def nifty_equity():
     return stock_values, volatility, CAGR, sharpe_ratio
 
 # Calculate equity curve and performance metrics for each strategy
-sample_equity, sample_volatility, sample_CAGR, sample_sharpe_ratio = sample_strategy()
+sample_equity, sample_volatility, sample_CAGR, sample_sharpe_ratio,stock_list = sample_strategy()
 nifty_equity_curve, nifty_volatility, nifty_CAGR, nifty_sharpe = nifty_equity()
 benchmark_equity, benchmark_volatility, benchmark_CAGR, benchmark_sharpe_ratio = benchmark_strategy()
 
