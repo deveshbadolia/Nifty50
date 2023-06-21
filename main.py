@@ -43,7 +43,7 @@ def benchmark_strategy():
     normalized_data = data.div(data.iloc[0])
 
     # Calculate position size
-    num_stocks = 50
+    num_stocks = len(stock)
     position_size = int_eq / num_stocks
 
     # Calculate stock values
@@ -72,8 +72,16 @@ def benchmark_strategy():
 # Define sample strategy
 def sample_strategy():
     # Stock symbols for sample strategy
-    Stock_list = ['RELIANCE.NS', 'HCLTECH.NS', 'TATAMOTORS.NS', 'M&M.NS', 'EICHERMOT.NS', 'JSWSTEEL.NS', 'BAJFINANCE.NS', 'APOLLOHOSP.NS', 'WIPRO.NS', 'ADANIENT.NS']
-    stock = [Stock_list[i] for i in range(0, top_n_stocks)]
+    stock = ['ADANIPORTS.NS', 'ASIANPAINT.NS', 'AXISBANK.NS', 'BAJAJ-AUTO.NS', 'BAJAJFINSV.NS', 'BAJFINANCE.NS',
+             'BHARTIARTL.NS', 'BPCL.NS', 'BRITANNIA.NS', 'CIPLA.NS',
+             'COALINDIA.NS', 'DIVISLAB.NS', 'DRREDDY.NS', 'EICHERMOT.NS', 'GRASIM.NS', 'HCLTECH.NS', 'HDFC.NS',
+             'HDFCBANK.NS', 'HDFCLIFE.NS', 'HEROMOTOCO.NS', 'HINDALCO.NS',
+             'HINDUNILVR.NS', 'ICICIBANK.NS', 'INDUSINDBK.NS', 'INFY.NS', 'IOC.NS', 'ITC.NS', 'JSWSTEEL.NS',
+             'KOTAKBANK.NS', 'LT.NS', 'M&M.NS', 'MARUTI.NS', 'NESTLEIND.NS',
+             'NTPC.NS', 'ONGC.NS', 'POWERGRID.NS', 'RELIANCE.NS', 'SBILIFE.NS', 'SBIN.NS', 'SHREECEM.NS',
+             'SUNPHARMA.NS', 'TATACONSUM.NS', 'TATAMOTORS.NS', 'TATASTEEL.NS',
+             'TCS.NS', 'TECHM.NS', 'TITAN.NS', 'ULTRACEMCO.NS', 'UPL.NS', 'WIPRO.NS']
+    stock = [stock[i] for i in range(0, top_n_stocks)]
 
     # Download stock data
     df = yf.download(stock, start=sim_start_date, end=end_date)["Close"]
